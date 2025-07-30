@@ -1,8 +1,9 @@
 #import "FFFastImageView.h"
+#import "FFFastImageViewManager.h"
 #import <SDWebImage/UIImage+MultiFormat.h>
 #import <SDWebImage/UIView+WebCache.h>
-#import <SDWebImageAVIFCoder/SDImageAVIFCoder.h>
-#import <SDWebImageWebPCoder/SDImageWebPCoder.h>
+// #import <SDWebImageAVIFCoder/SDImageAVIFCoder.h>
+// #import <SDWebImageWebPCoder/SDImageWebPCoder.h>
 
 @interface FFFastImageView ()
 
@@ -103,10 +104,11 @@
     self = [super init];
     self.resizeMode = RCTResizeModeCover;
     self.clipsToBounds = YES;
-    if (self) {
-       [[SDImageCodersManager sharedManager] addCoder:[SDImageAVIFCoder sharedCoder]];
-       [[SDImageCodersManager sharedManager] addCoder:[SDImageWebPCoder sharedCoder]];
-    }
+//    if (self) {
+        // we call it in FFFastViewManager
+//       [[SDImageCodersManager sharedManager] addCoder:[SDImageAVIFCoder sharedCoder]];
+//       [[SDImageCodersManager sharedManager] addCoder:[SDImageWebPCoder sharedCoder]];
+//    }
     return self;
 }
 
@@ -230,7 +232,7 @@
             }
             return [mutableRequest copy];
         }];
-        SDWebImageContext* context = @{SDWebImageContextDownloadRequestModifier: requestModifier};
+        SDWebImageContext* mutableContext = @{SDWebImageContextDownloadRequestModifier: requestModifier}.mutableCopy;
 
         // Set priority.
         SDWebImageOptions options = SDWebImageRetryFailed | SDWebImageHandleCookies;
@@ -256,9 +258,23 @@
             case FFFCacheControlImmutable:
                 break;
         }
+        
+        switch (_source.cacheTier) {
+            case FFFCacheTierPrimary:
+                [mutableContext setValue:[FFFastImageViewManager primaryCache] forKey:SDWebImageContextImageCache];
+                break;
+                
+            case FFFCacheTierSecondary:
+                [mutableContext setValue:[FFFastImageViewManager secondaryCache] forKey:SDWebImageContextImageCache];
+                break;
+        }
+
         [self onLoadStartEvent];
         self.hasCompleted = NO;
         self.hasErrored = NO;
+        
+        SDWebImageContext* context = [NSDictionary dictionaryWithDictionary:mutableContext];
+//        NSLog(@"[FastImage] reloadImage context: %@", context);
 
         [self downloadImage: _source options: options context: context];
     } else if (_defaultSource) {

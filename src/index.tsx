@@ -56,11 +56,19 @@ const cacheControl = {
     cacheOnly: 'cacheOnly',
 } as const
 
+type CacheTier = 'primary' | 'secondary'
+
+const cacheTier = {
+    primary: 'primary',
+    secondary: 'secondary',
+} as const
+
 export type Source = {
     uri?: string
     headers?: { [key: string]: string }
     priority?: Priority
     cache?: Cache
+    cacheTier?: CacheTier
 }
 
 export interface OnLoadEvent {
@@ -184,6 +192,7 @@ function FastImageBase({
     if (fallback) {
         const cleanedSource = { ...(source as any) }
         delete cleanedSource.cache
+        delete cleanedSource.cacheTier
         const resolvedSource = Image.resolveAssetSource(cleanedSource)
 
         return (
@@ -263,6 +272,7 @@ export interface FastImageStaticProperties {
     resizeMode: typeof resizeMode
     priority: typeof priority
     cacheControl: typeof cacheControl
+    cacheTier: typeof cacheTier
     preload: (sources: Source[]) => void
     clearMemoryCache: () => Promise<void>
     clearDiskCache: () => Promise<void>
@@ -274,6 +284,8 @@ const FastImage: React.ComponentType<FastImageProps> &
 FastImage.resizeMode = resizeMode
 
 FastImage.cacheControl = cacheControl
+
+FastImage.cacheTier = cacheTier
 
 FastImage.priority = priority
 

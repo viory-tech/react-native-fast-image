@@ -8,9 +8,12 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    "deps": "yarn install && yarn pods",
     "pods": "cd ./ios; pod install; cd ..",
     "clean:pods": "rm -rf ./ios/Pods; rm -f ./ios/Podfile.lock",
-    "setup": "echo \"YOU NEED NO RUN THIS IN TERMINAL by yourself in ios subfolder\"; echo \"export NODE_BINARY=\\$(command -v node) > .xcode.env\""
+    "setup": "echo \"YOU NEED NO RUN THIS IN TERMINAL by yourself in ios subfolder\"; echo \"export NODE_BINARY=\\$(command -v node) > .xcode.env\"",
+    "studio": "open -a \"/Applications/Android Studio.app\"",
+    "reverse": "adb reverse tcp:8081 tcp:8081"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",

@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import <RNFastImage/FFFastImageViewManager.h>
 
 @implementation AppDelegate
 
@@ -10,6 +11,11 @@
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
+  
+  [FFFastImageViewManager setup:@{@"primaryMemoryCacheSizeMB":@100,
+                                  @"secondaryMemoryCacheSizeMB":@100,
+                                  @"primaryDiskCacheSizeMB":@250,
+                                  @"secondaryDiskCacheSizeMB":@250}];
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }

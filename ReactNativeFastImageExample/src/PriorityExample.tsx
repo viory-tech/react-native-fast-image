@@ -46,6 +46,25 @@ export const PriorityExample = () => {
           }}
         />
       </SectionFlex>
+      <Section>
+        <FeatureText text="• Cache tier (primary, secondary)." />
+      </Section>
+      <SectionFlex onPress={bust}>
+        <FastImage
+          style={styles.image}
+          source={{
+            uri: IMAGE_URLS[0] + query.replace('?', '&'),
+            cacheTier: 'primary',
+          }}
+        />
+        <FastImage
+          style={styles.image}
+          source={{
+            uri: IMAGE_URLS[1] + query.replace('?', '&'),
+            cacheTier: 'secondary',
+          }}
+        />
+      </SectionFlex>
     </View>
   );
 };
