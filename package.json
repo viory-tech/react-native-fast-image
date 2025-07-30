@@ -36,7 +36,7 @@
     "scripts": {
         "clean": "rm -rf dist tsconfig.tsbuildinfo",
         "build": "yarn clean && tsc",
-        "example": "cd ./ReactNativeFastImageExample; yarn install; yarn pods; cd ..",
+        "example": "cd ./ReactNativeFastImageExample; yarn install; yarn pods; yarn start",
         "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
         "prepack": "yarn build",
         "test": "jest",

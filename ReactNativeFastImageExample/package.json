@@ -8,7 +8,9 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "pods": "cd ./ios; pod install; cd .."
+    "pods": "cd ./ios; pod install; cd ..",
+    "clean:pods": "rm -rf ./ios/Pods; rm -f ./ios/Podfile.lock",
+    "setup": "echo \"YOU NEED NO RUN THIS IN TERMINAL by yourself in ios subfolder\"; echo \"export NODE_BINARY=\\$(command -v node) > .xcode.env\""
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
