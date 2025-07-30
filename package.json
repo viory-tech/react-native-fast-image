@@ -1,7 +1,8 @@
 {
-    "name": "@d11/react-native-fast-image",
-    "version": "8.10.0",
-    "description": "🚩 FastImage, performant React Native image component.",
+    "name": "react-native-fast-image",
+    "version": "8.10.100",
+    "private": true,
+    "description": "🏴‍☠️ FastImage, performant React Native image component.",
     "keywords": [
         "cache",
         "cached",
@@ -9,16 +10,16 @@
         "image",
         "priority"
     ],
-    "homepage": "https://github.com/dream-sports-labs/react-native-fast-image#readme",
+    "homepage": "https://github.com/oneclick-llc/react-native-fast-image#readme",
     "bugs": {
-        "url": "https://github.com/dream-sports-labs/react-native-fast-image/issues"
+        "url": "https://github.com/oneclick-llc/react-native-fast-image/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/dream-sports-labs/react-native-fast-image.git"
+        "url": "https://github.com/oneclick-llc/react-native-fast-image.git"
     },
     "license": "(MIT AND Apache-2.0)",
-    "author": "Dream Sports Labs <dreamsportslabs@dream11.com> (https://github.com/dream-sports-labs)",
+    "author": "OneClick-LLC <app@oneclick.life> (https://github.com/oneclick-llc)",
     "main": "src/index",
     "module": "src/index",
     "source": "src/index",
@@ -32,13 +33,10 @@
         "dist",
         "RNFastImage.podspec"
     ],
-    "workspaces": [
-        "ReactNativeFastImageExample"
-    ],
     "scripts": {
         "clean": "rm -rf dist tsconfig.tsbuildinfo",
         "build": "yarn clean && tsc",
-        "example": "yarn workspace reactnativefastimageexample",
+        "example": "cd ./ReactNativeFastImageExample; yarn install; yarn pods; cd ..",
         "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
         "prepack": "yarn build",
         "test": "jest",
@@ -55,10 +53,6 @@
     },
     "resolutions": {
         "@jest/create-cache-key-function": "^27"
-    },
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://registry.npmjs.org/"
     },
     "devDependencies": {
         "@babel/core": "^7.24.7",
@@ -102,6 +96,5 @@
         "android": {
             "javaPackageName": "com.dylanvann.fastimage"
         }
-    },
-    "packageManager": "yarn@3.6.4"
+    }
 }

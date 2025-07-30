@@ -71,22 +71,22 @@ To install FastImage in your project, run:
 
 Using `yarn`:
 ```bash
-yarn add @d11/react-native-fast-image
+yarn add oneclick-llc/react-native-fast-image#VERSION
 cd ios && pod install
 ```
 
 Or using `npm`:
 ```bash
-npm install @d11/react-native-fast-image
+npm install oneclick-llc/react-native-fast-image#VERSION
 cd ios && pod install
 ```
 
-> **Note**: You must be using React Native 0.60.0 or higher to use the most recent version of `@d11/react-native-fast-image`.
+> **Note**: You must be using React Native 0.60.0 or higher to use the most recent version of `react-native-fast-image`.
 
 ### Usage Example
 
 ```jsx
-import FastImage from "@d11/react-native-fast-image";
+import FastImage from "react-native-fast-image";
 import * as React from "react";
 
 const YourImage = () => (
@@ -177,18 +177,3 @@ Special thanks to:
 - **FastImage** – MIT © [DreamSportsLabs](https://github.com/dream-sports-labs)
 - **SDWebImage** – MIT
 - **Glide** – BSD, part MIT, Apache 2.0. See [LICENSE](https://github.com/bumptech/glide/blob/master/LICENSE) for details.
-
-[build-badge]: https://github.com/dream-sports-labs/react-native-fast-image/workflows/CI/badge.svg
-[build]: https://github.com/dream-sports-labs/react-native-fast-image/actions?query=workflow%3ACI
-[coverage-badge]: https://img.shields.io/codecov/c/github/dream-sports-labs/react-native-fast-image.svg
-[coverage]: https://codecov.io/github/dream-sports-labs/react-native-fast-image
-[downloads-badge]: https://img.shields.io/npm/dm/react-native-fast-image.svg
-[npmtrends]: http://www.npmtrends.com/@d11/react-native-fast-image
-[package]: https://www.npmjs.com/package/@d11/react-native-fast-image
-[version-badge]: https://img.shields.io/npm/v/@d11/react-native-fast-image.svg
-[twitter]: https://twitter.com/home?status=Check%20out%20react-native-fast-image%20by%20%40atomarranger%20https%3A//github.com/dream-sports-labs/react-native-fast-image
-[twitter-badge]: https://img.shields.io/twitter/url/https/github.com/dream-sports-labs/react-native-fast-image.svg?style=social
-[github-watch-badge]: https://img.shields.io/github/watchers/dream-sports-labs/react-native-fast-image.svg?style=social
-[github-watch]: https://github.com/dream-sports-labs/react-native-fast-image/watchers
-[github-star-badge]: https://img.shields.io/github/stars/dream-sports-labs/react-native-fast-image.svg?style=social
-[github-star]: https://github.com/dream-sports-labs/react-native-fast-image/stargazers

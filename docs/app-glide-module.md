@@ -1,4 +1,4 @@
-# Removing `MyAppGlideModule` from `@d11/react-native-fast-image`
+# Removing `MyAppGlideModule` from `react-native-fast-image`
 
 If you’re using Glide within your application using an `AppGlideModule` then you’ll need to prevent the inclusion of the `AppGlideModule` in this package.
 

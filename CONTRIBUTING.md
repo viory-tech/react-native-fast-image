@@ -1,6 +1,6 @@
-# Contributing to @d11/react-native-fast-image
+# Contributing to react-native-fast-image
 
-Thank you for considering contributing to `@d11/react-native-fast-image`! This document outlines the process for contributing to this project and how to get started as a contributor.
+Thank you for considering contributing to `react-native-fast-image`! This document outlines the process for contributing to this project and how to get started as a contributor.
 
 ## Code of Conduct
 
@@ -101,6 +101,6 @@ Before your contribution can be accepted, you will need to sign our Contributor 
 
 ## Review and address feedback
 
-Keep an eye on any comments and review feedback left on your pull request on GitHub. Maintainers will do their best to provide constructive, actionable feedback to help get your changes ready to be merged into the @d11/react-native-fast-image repository.
+Keep an eye on any comments and review feedback left on your pull request on GitHub. Maintainers will do their best to provide constructive, actionable feedback to help get your changes ready to be merged into the react-native-fast-image repository.
 
 If you have questions or need help during the review process, you can also join our [Discord server](https://discord.gg/NyenAm9T) to discuss with the maintainers and community members.

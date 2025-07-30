@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
   s.version       = package['version']
   s.summary       = package['description']
   s.authors       = { "Dylan Vann" => "dylan@dylanvann.com" }
-  s.homepage      = "https://github.com/DylanVann/react-native-fast-image#readme"
+  s.homepage      = "https://github.com/oneclick-llc/react-native-fast-image#readme"
   s.license       = "MIT"
   s.framework = 'UIKit'
   s.requires_arc  = true
-  s.source        = { :git => "https://github.com/DylanVann/react-native-fast-image.git", :tag => "v#{s.version}" }
+  s.source        = { :git => "https://github.com/neclick-llc/react-native-fast-image.git", :tag => "v#{s.version}" }
   if fabric_enabled
     folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32'
 
@@ -36,4 +36,5 @@ Pod::Spec.new do |s|
   s.dependency 'SDWebImageAVIFCoder', '~> 0.11.0'
   s.dependency 'libavif/libdav1d', '~> 0.11.1'
   s.dependency 'libavif/core', '~> 0.11.1'
+
 end
