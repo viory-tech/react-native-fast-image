@@ -1,5 +1,5 @@
 import React from 'react';
-import {PixelRatio, StyleSheet, View} from 'react-native';
+import {PixelRatio, StyleSheet, Text, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import Section from './Section';
 import SectionFlex from './SectionFlex';
@@ -53,14 +53,16 @@ export const PriorityExample = () => {
         <FastImage
           style={styles.image}
           source={{
-            uri: IMAGE_URLS[0] + query.replace('?', '&'),
+            // uri: IMAGE_URLS[0] + query.replace('?', '&'),
+            uri: 'https://plus.unsplash.com/premium_photo-1683910767532-3a25b821f7ae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D',
             cacheTier: 'primary',
           }}
         />
         <FastImage
           style={styles.image}
           source={{
-            uri: IMAGE_URLS[1] + query.replace('?', '&'),
+            // uri: IMAGE_URLS[1] + query.replace('?', '&'),
+            uri: 'https://images.unsplash.com/photo-1626808642875-0aa545482dfb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D',
             cacheTier: 'secondary',
           }}
         />
