@@ -57,7 +57,15 @@ class FastImageViewConverter {
     FastImageSource getImageSource(Context context, @Nullable ReadableMap source) {
         return source == null
                 ? null
-                : new FastImageSource(context, source.getString("uri"), getHeaders(source));
+                : new FastImageSource(context, getSourceWithCacheParams(source), getHeaders(source));
+    }
+
+    static String getSourceWithCacheParams(@Nullable ReadableMap source) {
+        if (source == null) return "";
+        String tierName = source.getString("cacheTier");
+        String baseSource = source.getString("uri");
+        if (tierName == null || tierName.equals("")) return baseSource;
+        return baseSource + "#" + ExtraDiskCacheAdapter.TIER_PREFIX + "-" + tierName;
     }
 
     static Headers getHeaders(ReadableMap source) {
