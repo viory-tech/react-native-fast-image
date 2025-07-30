@@ -1,7 +1,7 @@
 package com.reactnativefastimageexample
 
 import android.app.Application
-import com.bumptech.glide.disklrucache.DiskLruCache
+import com.bumptech.glide.load.engine.cache.DiskCache
 import com.dylanvann.fastimage.ExtraDiskCacheAdapter
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
@@ -39,13 +39,13 @@ class MainApplication : Application(), ReactApplication {
   override fun onCreate() {
     super.onCreate()
     SoLoader.init(this, false)
-//    ExtraDiskCacheAdapter.init(
-//      this,
-//      hashMapOf(
-//        ExtraDiskCacheAdapter.DEFAULT_TIER_NAME to DiskLruCache.Factory.DEFAULT_DISK_CACHE_SIZE,
-//        "secondary" to SECONDARY_DISK_CACHE_SIZE,
-//      )
-//    )
+    ExtraDiskCacheAdapter.init(
+      this,
+      hashMapOf(
+        ExtraDiskCacheAdapter.DEFAULT_TIER_NAME to DiskCache.Factory.DEFAULT_DISK_CACHE_SIZE,
+        "secondary" to SECONDARY_DISK_CACHE_SIZE,
+      )
+    )
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
       // If you opted-in for the New Architecture, we load the native entry point for this app.
       load()
