@@ -196,7 +196,11 @@ function FastImageBase({
         const resolvedSource = Image.resolveAssetSource(cleanedSource)
 
         return (
-            <View style={[styles.imageContainer, style]} ref={forwardedRef}>
+            <View
+                pointerEvents={props.pointerEvents}
+                style={[styles.imageContainer, style]}
+                ref={forwardedRef}
+            >
                 <Image
                     {...props}
                     style={[StyleSheet.absoluteFill, { tintColor }]}
@@ -239,7 +243,11 @@ function FastImageBase({
         resolvedDefaultSource !== null ? String(resolvedDefaultSource) : null
 
     return (
-        <View style={[styles.imageContainer, style]} ref={forwardedRef}>
+        <View
+            pointerEvents={props.pointerEvents}
+            style={[styles.imageContainer, style]}
+            ref={forwardedRef}
+        >
             <FastImageView
                 {...props}
                 tintColor={tintColor}
