@@ -95,6 +95,11 @@
         "jsSrcsDir": "./src",
         "android": {
             "javaPackageName": "com.dylanvann.fastimage"
+        },
+        "ios": {
+            "componentProvider": {
+                "FastImageView": "FFFastImageViewComponentView"
+            }
         }
     }
 }

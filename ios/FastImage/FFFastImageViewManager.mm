@@ -7,6 +7,8 @@
 #import <RNFastImageSpec/RNFastImageSpec.h>
 #endif
 
+#if !defined(RCT_NEW_ARCH_ENABLED) || RCT_NEW_ARCH_ENABLED == 0
+
 static SDImageCache *static_cachePrimary = nil;
 static SDImageCache *static_cacheSecondary = nil;
 static float static_primaryMemoryCacheSizeMB = 100;
@@ -119,3 +121,5 @@ RCT_EXPORT_METHOD(clearDiskCache:(RCTPromiseResolveBlock)resolve reject:(RCTProm
 #endif
 
 @end
+
+#endif
