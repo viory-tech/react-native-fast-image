@@ -4,6 +4,7 @@
 #import <SDWebImage/UIView+WebCache.h>
 // #import <SDWebImageAVIFCoder/SDImageAVIFCoder.h>
 // #import <SDWebImageWebPCoder/SDImageWebPCoder.h>
+#import "FFFastImageHelper.h"
 
 @interface FFFastImageView ()
 
@@ -261,11 +262,11 @@
         
         switch (_source.cacheTier) {
             case FFFCacheTierPrimary:
-                [mutableContext setValue:[FFFastImageViewManager primaryCache] forKey:SDWebImageContextImageCache];
+                [mutableContext setValue:[FFFastImageHelper primaryCache] forKey:SDWebImageContextImageCache];
                 break;
                 
             case FFFCacheTierSecondary:
-                [mutableContext setValue:[FFFastImageViewManager secondaryCache] forKey:SDWebImageContextImageCache];
+                [mutableContext setValue:[FFFastImageHelper secondaryCache] forKey:SDWebImageContextImageCache];
                 break;
         }
 

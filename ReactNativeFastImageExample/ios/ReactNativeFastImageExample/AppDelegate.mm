@@ -1,7 +1,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
-#import <RNFastImage/FFFastImageViewManager.h>
+#import <RNFastImage/FFFastImageHelper.h>
 
 @implementation AppDelegate
 
@@ -12,7 +12,7 @@
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
   
-  [FFFastImageViewManager setup:@{@"primaryMemoryCacheSizeMB":@100,
+  [FFFastImageHelper setup:@{@"primaryMemoryCacheSizeMB":@100,
                                   @"secondaryMemoryCacheSizeMB":@100,
                                   @"primaryDiskCacheSizeMB":@250,
                                   @"secondaryDiskCacheSizeMB":@250}];
