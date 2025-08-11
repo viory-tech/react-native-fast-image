@@ -48,11 +48,12 @@ using namespace facebook::react;
         imageSourcePropsDict[@"headers"] = headers;
     }
     
-    if (newViewProps.resizeSize.has_value()) {
-        [fastImageView setResizeSize:@{
-            @"width": RCTNSStringFromString(newViewProps.resizeSize.width),
-            @"height": RCTNSStringFromString(newViewProps.resizeSize.height)
-        }];
+    if (newViewProps.resizeSize.width > 0 || newViewProps.resizeSize.height > 0) {
+        NSDictionary *resizeSizeDict = @{
+            @"width": @(newViewProps.resizeSize.width),
+            @"height": @(newViewProps.resizeSize.height),
+        };
+        [fastImageView setResizeSize:resizeSizeDict];
     } else {
         [fastImageView setResizeSize:nil];
     }

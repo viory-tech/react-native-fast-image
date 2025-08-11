@@ -29,8 +29,8 @@ type OnProgressEvent = Readonly<{
 }>
 
 type ResizeSize = Readonly<{
-    width: string
-    height: string
+    width: Float
+    height: Float
 }>
 
 interface NativeProps extends ViewProps {
