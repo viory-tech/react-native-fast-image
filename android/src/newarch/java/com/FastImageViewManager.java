@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.PorterDuff;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -98,6 +99,11 @@ class FastImageViewManager extends SimpleViewManager<FastImageViewWithUrl> imple
     public void setResizeMode(FastImageViewWithUrl view, String resizeMode) {
         final FastImageViewWithUrl.ScaleType scaleType = FastImageViewConverter.getScaleType(resizeMode);
         view.setScaleType(scaleType);
+    }
+
+    @Override
+    public void setResizeSize(FastImageViewWithUrl view, @androidx.annotation.Nullable ReadableMap value) {
+        Log.d("FastImageViewManager", "resizeSize is not supported on Android");
     }
 
     @Override
