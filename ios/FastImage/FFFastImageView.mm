@@ -192,6 +192,14 @@
     }
 }
 
+- (void) setResizeSize: (NSDictionary*)resizeSize {
+    if (_resizeSize != resizeSize) {
+        _resizeSize = resizeSize;
+        _needsReload = YES;
+    }
+}
+
+
 - (void) setDefaultSource: (UIImage*)defaultSource {
     if (_defaultSource != defaultSource) {
         _defaultSource = defaultSource;
@@ -235,6 +243,17 @@
         }];
         SDWebImageContext* mutableContext = @{SDWebImageContextDownloadRequestModifier: requestModifier}.mutableCopy;
 
+        if (_resizeSize != NULL) {
+            double width = [RCTConvert double:[_resizeSize valueForKey:@"width"]];
+            double height = [RCTConvert double:[_resizeSize valueForKey:@"height"]];
+            
+            SDImageResizingTransformer *transformer = [SDImageResizingTransformer
+                                                       transformerWithSize:CGSizeMake(width, height)
+                                                       scaleMode:SDImageScaleModeAspectFill];
+            [mutableContext setValue:transformer forKey:SDWebImageContextImageTransformer];
+            [mutableContext setValue:[NSValue valueWithCGSize:CGSizeMake(width, height)] forKey:SDWebImageContextImageThumbnailPixelSize];
+        }
+        
         // Set priority.
         SDWebImageOptions options = SDWebImageRetryFailed | SDWebImageHandleCookies;
         switch (_source.priority) {
