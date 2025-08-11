@@ -28,6 +28,11 @@ type OnProgressEvent = Readonly<{
     total: Int32
 }>
 
+type ResizeSize = Readonly<{
+    width: string
+    height: string
+}> | null
+
 interface NativeProps extends ViewProps {
     onFastImageError?: BubblingEventHandler<Readonly<{}>>
     onFastImageLoad?: BubblingEventHandler<OnLoadEvent>
@@ -40,6 +45,7 @@ interface NativeProps extends ViewProps {
         'contain' | 'cover' | 'stretch' | 'center',
         'cover'
     >
+    resizeSize?: ResizeSize
     tintColor?: ColorValue
 }
 
