@@ -1,6 +1,6 @@
 {
     "name": "react-native-fast-image",
-    "version": "8.10.107",
+    "version": "8.10.108",
     "private": true,
     "description": "🏴‍☠️ FastImage, performant React Native image component.",
     "keywords": [
@@ -23,7 +23,7 @@
     "main": "src/index",
     "module": "src/index",
     "source": "src/index",
-    "typings": "dist/index.d.ts",
+    "typings": "src/index",
     "files": [
         "src",
         "android",
